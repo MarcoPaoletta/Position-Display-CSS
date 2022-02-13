@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  rel="stylesheet" href="style.css">
+    <title>Position & Display CSS3</title>
+
+</head>
+<body>
+
+    <nav class="nav_container" id="init">
+
+        <ul class="list_container">
+
+            <a href="#position_relative" class="list_item">
+                <li>Position relative</li>
+            </a>
+
+            <a href="#position_absolute" class="list_item">
+                <li>Position absolute</li>
+            </a>
+
+            <a href="#position_fixed" class="list_item">
+                <li>Position fixed</li>
+            </a>
+
+            <a href="#position_sticky" class="list_item">
+                <li>Position sticky</li>
+            </a>
+
+            <a href="#display_block_inline_inline-block_none" class="list_item">
+                <li>Display block, inline, inline-block y none</li>
+            </a>
+
+            <a href="#display_flex" class="list_item">
+                <li>Display flex</li>
+            </a>
+            
+            <a href="#display_grid" class="list_item">
+                <li>Display grid</li>
+            </a>
+
+        </ul>
+
+    </nav>
+
+    <a href="#init" class="go_up">Ir arriba</a>
+
+    <div class="main_container">
+
+        <h1 class="main_title">Position & Display CSS3</h1>
+
+    </div>
+
+
+    <h1 id="position_relative">Position relative</h1>
+    <h3>Nos permite cambiar la obicacion del elemento relativo a su posicion/ubicacion inicial y nos da acceso a los valores top, bottom, left y right para mover el elemento</h3>
+    <div class="main_container_relative">
+
+        <div class="first_relative">Contenedor 1</div>
+        <div class="second_relative">Contenedor 2</div>
+        <div class="third_relative">Contenedor 3</div>
+
+    </div>
+
+    <pre><code>
+
+        .first_relative, .second_relative, .third_relative {
+            height: 100px;
+            width: 100px;
+        }
+        
+        .main_container_relative {
+            background-color: royalblue;
+            height: 500px;
+            width: 500px;
+        }
+        
+        .first_relative {
+            background-color: brown;
+            position: relative;
+            top: 400px;
+            left: 100px;
+        }
+        
+        .second_relative {
+            background-color: aquamarine;
+        }
+        
+        .third_relative {
+            background-color: chartreuse;
+        }        
+
+    </code></pre>
+
+    <h1 id="position_absolute">Position absolute</h1>
+    <h3>Ignora el flujo del documento y no le importa la posicion del padre. Con esto se puede posicionar en cualquier lado. Usando un position relative en su contenedor, se puede posicionar dentro de este</h3>
+    <div class="main_container_absolute">
+
+        <div class="first_absolute">Contenedor 1</div>
+        <div class="second_absolute">Contenedor 2</div>
+        <div class="third_absolute">Contenedor 3</div>
+
+    </div>
+
+    <pre><code>
+
+        .second_absolute, .third_absolute {
+            height: 100px;
+            width: 100px;
+        }
+        
+        .main_container_absolute {
+            background-color: royalblue;
+            height: 500px;
+            width: 500px;
+            position: relative;
+        }
+        
+        .first_absolute {
+            background-color: brown;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 25%;
+            right: 25%;
+        }
+        
+        .second_absolute {
+            background-color: aquamarine;
+        }
+        
+        .third_absolute {
+            background-color: chartreuse;
+        }
+
+    </code></pre>
+
+    <h1 id="position_fixed">Position fixed</h1>
+    <h3>Va a tomar la pantalla y va a posicionar el elemento relativa a ella y va a estar en esa posicion por siempre. Muy util para boton para subir a la parte de arriba de todo de la pagina</h3>
+
+    <h1 id="position_sticky">Position sticky</h1>
+    <h3>Va a cambiar entre position static (es decir, la que esta definida por defecto) y position fixed</h3>
+    <div class="main_container_sticky">
+
+        <div class="first_sticky">Contenedor 1</div>
+        <div class="second_sticky">Contenedor 2</div>
+        <div class="third_sticky">Contenedor 3</div>
+
+    </div>
+
+    <pre><code>
+
+        .second_sticky, .third_sticky {
+            height: 100px;
+            width: 100px;
+        }
+        
+        .main_container_sticky {
+            background-color: royalblue;
+            height: 500px;
+            width: 500px;
+            position: relative;
+        }
+        
+        .first_sticky {
+            background-color: brown;
+            position: sticky;
+            top: 0;
+            bottom: 0;
+            left: 25%;
+            right: 25%;
+        }
+        
+        .second_sticky {
+            background-color: aquamarine;
+        }
+        
+        .third_sticky {
+            background-color: chartreuse;
+        }
+
+    </code></pre>
+
+    <h1 id="display_block_inline_inline-block_none">Display block, inline, inline-block y none</h1>
+
+    <div class="div_1">Div 1 - display: block;</div>
+    <span class="span_1">Span 1 - display: inline;</span>
+    <img src="https://source.unsplash.com/xfngap_DToE" class="img">
+    <p style="display: inline;"><- display: inline-block;</p>
+    <span class="span_2">Span 2</span>
+    <div class="div_2">Div 2</div>
+
+    <pre><code>
+
+        .div_1, .span_1, .span_2, .div_2 {
+            font-size: 2em;
+        }
+        
+        .div_1 {
+            display: block;
+            background-color: red;
+        }
+        
+        .span_1 {
+            display: inline;
+            background-color: cyan;
+        }
+        
+        .span_2 {
+            background-color: purple;
+        }
+        
+        .div_2 {
+            background-color: green;
+            display: none;
+        }
+        
+        .img {
+            display: inline-block;
+            width: 300px;
+            height: 300px;
+        }
+
+    </code></pre>
+
+    <h3>display: block; -> es la opcion por defecto que asigna todo el ancho al elemento y hace que el resto de elementos esten por debajo de el</h3>
+    <h3>display inline; -> asigna el menor valor posible del ancho permitiendo que los elementos puedan estar en la misma linea</h3>
+    <h3>display inline-block; -> lo mismo que inline, es decir que asigna el menor valor posible del ancho, y podemos modificar el ancho y el alto del elemento, cosa que con inline no toma efecto alguno</h3>
+    <h3>display none; -> elimina al elemento por completo del documento</h3>
+
+    <h1 id="display_flex">Display flex</h1>
+
+    <div class="flexbox_container">
+
+        <div class="flexbox_item flexbox_item_1">Contenedor 1</div>
+        <div class="flexbox_item flexbox_item_2">Contenedor 2</div>
+        <div class="flexbox_item flexbox_item_3">Contenedor 3</div> 
+
+    </div>
+
+    <pre><code>
+
+        .flexbox_container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: #999;
+        }
+        
+        .flexbox_item{
+            width: 200px;
+            margin: 10px;
+            border: 3px solid #333;
+            margin: 50px;
+            background-color: #dfdfdf;
+        }
+        
+        .flexbox_item_1{
+            min-height: 100px;
+        }
+        
+        .flexbox_item_2{
+            min-height: 200px;
+        }
+        
+        .flexbox_item_3{
+            min-height: 300px;
+        }
+
+    </code></pre>
+
+    <h3>flex-wrap: wrap; -> hara que los elementos puedan fluir en varias lineas</h3>
+    <h3>flex-shrink: 0; -> deshabilita el encogimiento del elemento cuando cambia el tamaño de la pantalla</h3>
+    <h3>flex-grow: toma el espacio vacio y lo divide por cada columna del flex</h3>
+    <h3>flex-basis: le indica desde donde empezar a expandir el elemento flex</h3>
+    <h3>order: indica el orden en el flex que va a tener el elemento</h3>
+    <h3>flex: VALOR 1, VALOR 2, VALOR 3; -> el VALOR 1 es el flex-grow, el VALOR 2 es el flex-shrink y el VALOR 3 es el flex-basis</h3>
+
+    <h1 id="display_grid">Display grid</h1>
+
+    <div class="grid_container">
+
+        <div class="grid_item grid_item_1">Grid 1</div>
+        <div class="grid_item grid_item_2">Grid 2</div>
+        <div class="grid_item grid_item_3">Grid 3</div>
+        <div class="grid_item grid_item_4">Grid 4</div>
+        <div class="grid_item grid_item_5">Grid 5</div>
+
+    </div>
+
+    <h3>grid-template-columns: especifica el numero y el ancho de las columnas en el grid. Se usa fr para determinar la fraccion del grid, es decir, si establecemos 2fr, ocupara 2 fracciones enteras en el grid. Se puede utilizar repeat(VALOR 1, VALOR 2); el VALOR 1 es la cantidad de columnas deseadas y VALOR 2 el ancho de cada una para evitar por ejemplo, escribir: grid-template-columns: 100px 100px 100px; para establecer que queremos tres columnas de 100px cada una</h3>
+
+    <h3>grid-template-rows: especifica el alto para la columna del grid</h3>
+
+    <h3>grid-auto-rows: especifica el alto por defecto para cada columna del grid. Se puede utilizar minmax(VALOR 1, VALOR 2); el VALOR 1 es el alto minimo de la columna y el VALOR 2 es el alto maximo de la columna, el cual si lo establecemos en auto, se va a expandir de acuerdo al contenido</h3>
+
+    <h3>grid-row-gap: espaciado entre cada fila</h3>
+
+    <h3>grid-column-gap: espaciado entre cada columna</h3>
+
+    <h3>grid-gap: espaciado entre cada fila y columna, es decir, grid-row-gap y grid-column-gap juntos en una sola linea</h3>
+
+    <h3>grid-column-start: que columna va a empezar el elemento, siendo el 1 la primera</h3>
+
+    <h3>grid-column-end: en que columna va a terminar el elemento, siendo el -1 la ultima</h3>
+
+    <h3>grid-column: en que columna va a empezar el elemento, seguido de una /, y en cual va a terminar, es decir, grid-column-start y grid-column-end en una sola linea</h3>
+
+    <h3>grid-row-start: en que fila va a empezar el elemento, siendo el 1 la primera</h3>
+
+    <h3>grid-row-end: en que fila va a terminar el elemento</h3>
+
+    <h3>grid-row: en que fila va a empezar el elemento, seguido de una /, y en cual va a terminar, es decir, grid-row-start y grid-row-end en una sola linea</h3>
+
+</body>
+</html>
